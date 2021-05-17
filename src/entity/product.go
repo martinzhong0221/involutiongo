@@ -1,11 +1,12 @@
 package entity
 
-import "time"
+import (
+	"gorm.io/gorm"
+)
 
 type Product struct {
+	gorm.Model
 	Id          int
 	ProductName string
 	ProductDesc string
-	UtcUpdate   time.Time
-	UtcInsert   time.Time
 }
