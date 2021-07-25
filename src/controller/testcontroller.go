@@ -9,11 +9,11 @@ import (
 
 // https://learnku.com/docs/gin-gonic/2019/quickstart/6151
 
-func init() {
+func Start() {
 	r := gin.Default()
 	//r.GET("/set", set)
-	//r.GET("/get", get)
-	r.Run(":8080") // listen and serve on 0.0.0.0:8080
+	r.GET("/get", hello)
+	r.Run(":8081") // listen and serve on 0.0.0.0:8080
 
 }
 
@@ -33,5 +33,11 @@ func get(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"status": "200",
 		"data":   value,
+	})
+}
+func hello(c *gin.Context)  {
+	c.JSON(200, gin.H{
+		"status": "200",
+		"data":   "hello",
 	})
 }

@@ -1,13 +1,11 @@
 package main
 
-import (
-	"involutiongo/src/cache"
-	"involutiongo/src/db"
-	"involutiongo/src/injector"
-)
+import "involutiongo/src/controller"
 
 func main() {
-	beanFactory := injector.NewBeanFactory()
-	beanFactory.Set(cache.NewRedisOps())
-	beanFactory.Set(db.NewDbOps())
+	//beanFactory := injector.NewBeanFactory()
+	//beanFactory.Set(cache.NewRedisOps())
+	//beanFactory.Set(db.NewDbOps())
+
+	controller.Start()
 }
